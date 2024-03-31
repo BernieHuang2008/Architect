@@ -2,6 +2,7 @@ import { IconButton } from "@mui/material";
 import ArticleIcon from "@mui/icons-material/Article";
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import SchemaIcon from '@mui/icons-material/Schema';
+import DrawIcon from '@mui/icons-material/Draw';
 
 function Sidebar({ page, setPage }) {
     return (
@@ -12,6 +13,13 @@ function Sidebar({ page, setPage }) {
                 onClick={() => setPage("graph")}
             >
                 <SchemaIcon fontSize="large" />
+            </IconButton>
+            <IconButton
+                color={page === "draw" ? "primary" : "none"}
+                aria-label="WhiteBoard"
+                onClick={() => setPage("draw")}
+            >
+                <DrawIcon fontSize="large" />
             </IconButton>
             <IconButton
                 color={page === "docs" ? "primary" : "none"}
