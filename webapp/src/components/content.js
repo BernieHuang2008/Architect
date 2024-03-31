@@ -1,4 +1,4 @@
-import PageGraph from '../pages/graph/main';
+import PageGraph from "../pages/graph/main";
 
 function Content({ page }) {
     return (

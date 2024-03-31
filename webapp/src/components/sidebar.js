@@ -1,5 +1,4 @@
 import { IconButton } from "@mui/material";
-import {blue} from '@mui/material/colors'
 import ArticleIcon from "@mui/icons-material/Article";
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import SchemaIcon from '@mui/icons-material/Schema';
