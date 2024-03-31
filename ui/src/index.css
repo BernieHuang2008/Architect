@@ -7,7 +7,76 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  overflow: hidden;
+}
+
+#root {
+  --sidebar-width: 51px;
+}
+
+#root>.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  float: left;
+}
+
+#root>.content {
+  width: calc(100vw - var(--sidebar-width));
+  height: 100vh;
+  float: right;
+}
+
+/* Page: Graph */
+#page-graph {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  /* &::-webkit-scrollbar {
+    width: 0 !important
+  } */
+  /* TODO: hide the scrollbar */
+
+  --graph-footbar-height: 18px;
+  --graph-rightbar-width: 18px;
+}
+
+#page-graph>.footbar {
+  height: var(--graph-footbar-height);
+  width: calc(100% - var(--sidebar-width) - var(--graph-rightbar-width));
+  position: absolute;
+  bottom: 0;
+}
+
+#page-graph>.rightbar {
+  height: calc(100% - var(--graph-footbar-height));
+  width: var(--graph-rightbar-width);
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#page-graph .vscrollbar-x {
+  height: 100%;
+  width: 50%;
+  float: right;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+#page-graph .vscrollbar-y {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#InfBoardViewBox {
+  height: calc(100% - var(--graph-footbar-height));
+  width: calc(100% - var(--graph-rightbar-width));
+}
+
+#anchor>* {
+  position: relative;
 }

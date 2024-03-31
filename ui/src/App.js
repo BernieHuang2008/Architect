@@ -1,23 +1,30 @@
-import Grid from '@mui/material/Grid';
-
 import Sidebar from './components/sidebar';
+import Content from './components/content';
+
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import { useState } from 'react';
 
 function App() {
-  var [page, setPage] = useState('home');
+  var theme = createTheme({
+    palette: {
+      sidebarUnselected: {
+        main: '#0007',
+        light: '#0007',
+        dark: 'fff7',
+        contrastText: '#111',
+      },
+    },
+  });
+
+
+  var [page, setPage] = useState('graph');
 
   return (
-    <Grid container spacing={0}>
-      <Grid item xs={1}>
-        <Sidebar page={page} setPage={setPage} />
-      </Grid>
-      <Grid item xs={11}>
-        <div className="content">
-          Hello
-        </div>
-      </Grid>
-    </Grid>
+    <ThemeProvider theme={theme}>
+      <Sidebar page={page} setPage={setPage} />
+      <Content page={page} />
+    </ThemeProvider>
   );
 }
 
