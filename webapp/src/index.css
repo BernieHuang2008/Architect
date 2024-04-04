@@ -34,11 +34,6 @@ body {
   width: 100%;
   overflow: hidden;
 
-  /* &::-webkit-scrollbar {
-    width: 0 !important
-  } */
-  /* TODO: hide the scrollbar */
-
   --graph-footbar-height: 18px;
   --graph-rightbar-width: 18px;
 }
