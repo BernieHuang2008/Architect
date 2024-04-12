@@ -62,8 +62,16 @@
     position: relative;
 }
 
+#anchor.no-animation {
+    transition: none;
+}
+
 #anchor>* {
     position: relative;
+}
+
+#anchor-node {
+    z-index: 100;
 }
 
 .node {
@@ -75,9 +83,19 @@
 
 .node:hover {
     box-shadow: 1px 1px 1px #0003;
+    cursor: pointer;
 }
 
-svg.edge {
+path.edge-display {
     fill: none;
     stroke: black;
+}
+
+path.edge-interaction {
+    fill: none;
+    stroke: #fff;
+    stroke-opacity: 0;
+    stroke-width: 15px;
+    cursor: pointer;
+    z-index: 100;
 }
