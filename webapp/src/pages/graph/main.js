@@ -21,8 +21,8 @@ function InfBoard() {
         if (inited === false)
             return true;
 
-        var sbX = document.querySelector('.vscrollbar-x');
-        var sbY = document.querySelector('.vscrollbar-y');
+        var sbX = document.querySelector('.vscrollbar.x');
+        var sbY = document.querySelector('.vscrollbar.y');
 
         var scrollX = sbX.scrollLeft - window.innerWidth;
         var scrollY = sbY.scrollTop - window.innerHeight;
@@ -32,8 +32,8 @@ function InfBoard() {
 
     // when mouse wheel scrolls
     function onWhScroll(e) {
-        var sbX = document.querySelector('.vscrollbar-x');
-        var sbY = document.querySelector('.vscrollbar-y');
+        var sbX = document.querySelector('.vscrollbar.x');
+        var sbY = document.querySelector('.vscrollbar.y');
         var deltaX = e.deltaX;
         var deltaY = e.deltaY;
 
@@ -76,8 +76,8 @@ function InfBoard() {
             setViewScale(newScale);
 
             // actuall scroll
-            const sbX = document.querySelector('.vscrollbar-x');
-            const sbY = document.querySelector('.vscrollbar-y');
+            const sbX = document.querySelector('.vscrollbar.x');
+            const sbY = document.querySelector('.vscrollbar.y');
             sbX.scrollBy(dx, 0);
             sbY.scrollBy(0, dy);
         });
@@ -90,8 +90,8 @@ function InfBoard() {
     // init: only run once
     useEffect(() => {
         // init v-scrollbar
-        var sbX = document.querySelector('.vscrollbar-x');
-        var sbY = document.querySelector('.vscrollbar-y');
+        var sbX = document.querySelector('.vscrollbar.x');
+        var sbY = document.querySelector('.vscrollbar.y');
         sbX.scrollLeft = -canvasSize[0] + window.innerWidth / 2;
         sbY.scrollTop = -canvasSize[1] + window.innerHeight / 2;
 
@@ -144,10 +144,10 @@ function InfBoard() {
                 <Anchor viewPoint={viewPoint} viewScale={viewScale} />
             </div>
             <div className="footbar">
-                <div className="vscrollbar-x" onScroll={onSbScroll}><div className="scroll-block" style={{ width: canvasSize[2] * viewScale }}></div></div>
+                <div className="vscrollbar x" onScroll={onSbScroll}><div className="scroll-block" style={{ width: canvasSize[2] * viewScale }}></div></div>
             </div>
             <div className="rightbar">
-                <div className="vscrollbar-y" onScroll={onSbScroll}><div className="scroll-block" style={{ height: canvasSize[3] * viewScale }}></div></div>
+                <div className="vscrollbar y" onScroll={onSbScroll}><div className="scroll-block" style={{ height: canvasSize[3] * viewScale }}></div></div>
             </div>
         </>
     )
