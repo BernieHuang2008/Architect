@@ -4,13 +4,13 @@
     width: 100%;
     overflow: hidden;
 
-    --graph-footbar-height: 18px;
-    --graph-rightbar-width: 18px;
+    --graph-footbar-height: 16px;
+    --graph-rightbar-width: 16px;
 }
 
 #page-graph>.footbar {
     height: var(--graph-footbar-height);
-    width: calc(100% - var(--sidebar-width) - var(--graph-rightbar-width));
+    width: calc(100% - var(--navbar-width) - var(--graph-rightbar-width));
     position: absolute;
     bottom: 0;
     z-index: 1e10;

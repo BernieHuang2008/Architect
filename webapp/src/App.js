@@ -1,4 +1,4 @@
-import Sidebar from './components/sidebar';
+import Navbar from './components/navbar';
 import Content from './components/content';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -6,23 +6,14 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
 
 function App() {
-  var theme = createTheme({
-    palette: {
-      sidebarUnselected: {
-        main: '#0007',
-        light: '#0007',
-        dark: 'fff7',
-        contrastText: '#111',
-      },
-    },
-  });
+  var theme = createTheme({});
 
 
   var [page, setPage] = useState('graph');
 
   return (
     <ThemeProvider theme={theme}>
-      <Sidebar page={page} setPage={setPage} />
+      <Navbar page={page} setPage={setPage} />
       <Content page={page} />
     </ThemeProvider>
   );

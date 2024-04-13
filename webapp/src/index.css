@@ -13,17 +13,17 @@ body {
 }
 
 #root {
-  --sidebar-width: 51px;
+  --navbar-width: 51px;
 }
 
-#root>.sidebar {
-  width: var(--sidebar-width);
+#root>.navbar {
+  width: var(--navbar-width);
   height: 100vh;
   float: left;
 }
 
 #root>.content {
-  width: calc(100vw - var(--sidebar-width));
+  width: calc(100vw - var(--navbar-width));
   height: 100vh;
   float: right;
 }
